@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SurfaceProof Ledger — Finish the job. Keep the proof.</title>
+<meta name="description" content="SurfaceProof Ledger creates professional before-and-after job completion reports for exterior-cleaning businesses serving commercial properties, HOAs, and property managers. Document pre-existing damage before work begins, show exactly what was cleaned, and keep organized, dated records to help resolve disputes.">
+<style>
+  :root{
+    --ink:#17323b; --muted:#5b707a; --brand:#0f766e; --brand-dark:#0b5952;
+    --bg:#f4f7f7; --card:#ffffff; --line:#d9e2e4; --accent:#e3f2ef;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:960px; margin:0 auto; padding:0 20px;}
+  header{background:var(--ink); color:#fff;}
+  header .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 20px;}
+  .logo{font-size:22px; font-weight:800; letter-spacing:.2px;}
+  .logo span{color:#2fbfa8;}
+  .logo-tag{font-size:12.5px; font-weight:600; letter-spacing:.4px; color:#a7bcc2; margin-top:1px;}
+  header a{color:#fff; text-decoration:none; font-weight:600; font-size:15px;}
+  header a:hover{text-decoration:underline;}
+  .hero{padding:64px 0 48px; text-align:center;}
+  .hero h1{font-size:40px; line-height:1.15; max-width:720px; margin:0 auto 16px;}
+  .hero p{font-size:19px; color:var(--muted); max-width:640px; margin:0 auto 30px;}
+  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:14px 28px; border-radius:8px; font-size:17px; font-weight:700;
+       text-decoration:none; border:2px solid transparent; cursor:pointer;}
+  .btn-primary{background:var(--brand); color:#fff;}
+  .btn-primary:hover{background:var(--brand-dark);}
+  .btn-outline{background:#fff; color:var(--brand-dark); border-color:var(--brand);}
+  .btn-outline:hover{background:var(--accent);}
+  .price-note{margin-top:14px; color:var(--muted); font-size:15px;}
+  .hero-line{font-size:21px; font-weight:700; color:var(--brand-dark); max-width:640px; margin:0 auto 14px;}
+  .free-offer{margin-top:18px; font-size:17px; font-weight:800; color:var(--brand-dark);}
+  section{padding:44px 0;}
+  h2{font-size:27px; text-align:center; margin-bottom:30px;}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .step{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:24px;}
+  .step .num{width:36px; height:36px; border-radius:50%; background:var(--brand); color:#fff;
+             font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:12px;}
+  .step h3{font-size:18px; margin-bottom:8px;}
+  .step p{color:var(--muted); font-size:15px;}
+  .features{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+  .feature{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px;}
+  .feature h3{font-size:17px; margin-bottom:6px;}
+  .feature p{color:var(--muted); font-size:15px;}
+  .feature .tag{display:inline-block; font-size:11.5px; font-weight:800; letter-spacing:.4px;
+                padding:2px 8px; border-radius:20px; margin-bottom:8px;}
+  .tag-free{background:var(--accent); color:var(--brand-dark);}
+  .tag-pro{background:var(--ink); color:#fff;}
+  .pricing{background:var(--card); border:1px solid var(--line); border-radius:12px;
+           max-width:540px; margin:0 auto; padding:34px; text-align:center;}
+  .pricing .badge{display:inline-block; background:#fdf0e6; color:#8a4b12;
+                  font-weight:800; font-size:13px; padding:4px 12px; border-radius:20px; margin-bottom:14px;}
+  .pricing .amount{font-size:46px; font-weight:800;}
+  .pricing .per{color:var(--muted); font-size:17px;}
+  .pricing .founding{margin-top:12px; font-size:15px; color:var(--ink);}
+  .pricing .standard{color:var(--muted); font-size:14px;}
+  .pricing ul{list-style:none; margin:20px 0 26px; text-align:left;}
+  .pricing li{padding:7px 0 7px 26px; position:relative; color:var(--ink); font-size:15.5px;}
+  .pricing li::before{content:"✓"; position:absolute; left:0; color:var(--brand); font-weight:800;}
+  .honest{background:var(--accent); border-radius:10px; padding:20px 24px; max-width:720px; margin:0 auto;
+          color:var(--brand-dark); font-size:15.5px; text-align:center;}
+  /* Sample report */
+  .sample-cap{text-align:center; color:var(--muted); font-size:14.5px; margin-top:14px;}
+  .sample-doc{background:#fff; border:1px solid var(--line); border-radius:6px; max-width:680px;
+              margin:0 auto; padding:38px 42px; box-shadow:0 4px 18px rgba(23,50,59,.07); text-align:left;}
+  .sample-doc .co{font-size:21px; font-weight:800; color:var(--ink);}
+  .sample-doc .contact{color:var(--muted); font-size:13.5px; margin-bottom:4px;}
+  .sample-doc .rule{height:3px; background:var(--brand); border-radius:2px; margin:10px 0 20px;}
+  .sample-doc h3{font-size:17px; margin-bottom:4px;}
+  .sample-doc .date{color:var(--muted); font-size:13.5px; margin-bottom:18px;}
+  .sample-doc h4{font-size:14.5px; margin:18px 0 8px;}
+  .sample-doc p, .sample-doc li{font-size:14.5px;}
+  .sample-doc ul{margin:0 0 6px 20px;}
+  .sample-doc .kv{display:flex; gap:10px; font-size:14.5px; padding:3px 0;}
+  .sample-doc .kv b{min-width:150px;}
+  .sample-doc .verdict{font-size:16px; margin-top:6px;}
+  .sample-doc .verdict b{color:var(--brand-dark); font-size:19px;}
+  .sample-doc .sig{margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:26px;}
+  .sample-doc .sig .line{border-top:1px solid var(--ink); padding-top:5px; font-size:12.5px; color:var(--muted);}
+  .policies{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .policy{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px;}
+  .policy h3{font-size:17px; margin-bottom:8px;}
+  .policy p{color:var(--muted); font-size:15px;}
+  footer{border-top:1px solid var(--line); padding:28px 0 40px; color:var(--muted); font-size:14.5px; text-align:center;}
+  footer a{color:var(--brand-dark);}
+  @media (max-width:720px){
+    .steps,.features,.policies{grid-template-columns:1fr;}
+    .hero h1{font-size:31px;}
+    .hero{padding:44px 0 34px;}
+    .sample-doc{padding:26px 22px;}
+    .sample-doc .sig{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div>
+      <div class="logo">SurfaceProof <span>Ledger</span></div>
+      <div class="logo-tag">Job completion reports for exterior cleaning professionals</div>
+    </div>
+    <a href="app.html">Open the app</a>
+  </div>
+</header>
+
+<div class="hero wrap">
+  <h1>Finish the job. Keep the proof.</h1>
+  <p class="hero-line">Professional before-and-after job reports for commercial properties, HOAs, and property managers.</p>
+  <p>SurfaceProof Ledger is built for exterior-cleaning businesses that serve commercial properties,
+     HOAs, apartment complexes, and property managers — and the absentee owners who can't walk the
+     property themselves. Document pre-existing damage before work begins, show exactly what was
+     cleaned, and keep organized, dated job documentation to help resolve customer questions and
+     disputes. Residential clients get the same professional proof — no per-job fees, no complicated
+     software.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://buy.stripe.com/00wbJ24ZJ2eAcDiaO40oM0q">Subscribe — $19/month founding price</a>
+    <a class="btn btn-outline" href="app.html">Try the job builder free</a>
+  </div>
+  <p class="free-offer">Create your first report — FREE. No credit card required.</p>
+  <p class="price-note">The job builder — surfaces, before/after photos, and the job checklist — is free for the job you're working on, and your first complete branded PDF report is free too. Pro unlocks unlimited reports, an evidence pack (report + original photos) for every job, the job history dashboard, and backup export.</p>
+</div>
+
+<section class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h3>Photograph before</h3>
+      <p>Walk the property and snap a "before" photo of every surface — driveway, siding, roof, deck — and photograph any pre-existing damage before you touch anything. Thirty seconds now saves an argument later.</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h3>Do the work</h3>
+      <p>Run the job checklist — arrived, water access, property protected, work completed, walkthrough, invoice sent — and note the service and condition for each surface.</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h3>Send the proof</h3>
+      <p>Take the "after" photos and download a branded PDF report — before and after side by side, the service performed, pre-existing damage, and a clear documentation status: COMPLETE only when every surface has both photos and the checklist is done. Send it to the client or the property manager.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>What you get</h2>
+  <div class="features">
+    <div class="feature">
+      <span class="tag tag-free">FREE</span>
+      <h3>Job builder with surfaces &amp; checklist</h3>
+      <p>Build the job you're on: add each surface (driveway, siding, roof, deck/patio, fence, sidewalk, pool deck, commercial lot — or your own), record the service performed and condition notes, and work the six-step job checklist.</p>
+    </div>
+    <div class="feature">
+      <span class="tag tag-free">FREE</span>
+      <h3>Before/after photos &amp; live documentation status</h3>
+      <p>Attach before and after photos to every surface, right on your phone, and watch the documentation status update — it's COMPLETE only when every surface has both photos, the checklist is done, and every pre-existing damage item carries a note.</p>
+    </div>
+    <div class="feature">
+      <span class="tag tag-free">FREE</span>
+      <h3>Pre-existing damage documentation</h3>
+      <p>Before the water turns on, photograph and note damage that's already there — cracked pavers, chipped paint, broken fixtures. It lands in its own section of the report, so a pre-existing problem never becomes your problem.</p>
+    </div>
+    <div class="feature">
+      <span class="tag tag-pro">PRO</span>
+      <h3>Branded PDF job completion reports</h3>
+      <p>A professional PDF report with your logo for every job — before and after photos side by side, services, notes, pre-existing damage, checklist, documentation status, and an optional customer acknowledgment block. Your first one is free, no credit card required. Flat monthly price, no per-job fees, ever.</p>
+    </div>
+    <div class="feature">
+      <span class="tag tag-pro">PRO</span>
+      <h3>Evidence packs, history &amp; backup</h3>
+      <p>An evidence pack for every saved job — the report PDF, your original before/after and damage photos, a data record, and SHA-256 checksums so you can show the files haven't changed since export — plus a history dashboard of every past job and backup export. Your records stay in your browser, under your control.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>See a sample report</h2>
+  <div class="sample-doc">
+    <div class="co">SparkleWash Exterior Cleaning</div>
+    <div class="contact">(555) 013-4471 · reports@sparklewash.example</div>
+    <div class="rule"></div>
+    <h3>Surface Transformation Report</h3>
+    <div class="date">Client: <strong>The Henderson Family</strong> · 4821 Rosewood Lane · November 22, 2026</div>
+
+    <div class="kv"><b>Technician</b><span>D. Alvarez</span></div>
+    <div class="kv"><b>Invoice #</b><span>INV-1042</span></div>
+    <div class="kv"><b>Pre-existing damage</b><span>1 item photographed before work — cracked paver, driveway south corner</span></div>
+    <p class="verdict">Documentation status: <b>COMPLETE</b></p>
+    <p>Surfaces documented 3 of 3 · Required photos 10 of 10 · Checklist 100%</p>
+
+    <h4>Surfaces</h4>
+    <ul>
+      <li>Driveway — pressure wash + surface-cleaner pass · 2 before / 2 after photos</li>
+      <li>House siding — soft wash, low pressure · 1 before / 1 after photo</li>
+      <li>Deck/Patio — wash + brightener treatment · 2 before / 2 after photos</li>
+    </ul>
+
+    <h4>Condition notes</h4>
+    <p>Driveway — heavy algae along the shaded north edge, cleared fully. Siding — light oxidation on the west wall; no paint damage found or caused.</p>
+
+    <div class="sig">
+      <div class="line">Completed by — D. Alvarez</div>
+      <div class="line">Signature &amp; date</div>
+    </div>
+  </div>
+  <p class="sample-cap">Sample report — SparkleWash Exterior Cleaning and the Henderson Family are fictional. Your reports carry your logo, your clients, and your photos.</p>
+</section>
+
+<section class="wrap">
+  <h2>Simple pricing</h2>
+  <div class="pricing">
+    <div class="badge">FOUNDING MEMBERS — FIRST 25 CUSTOMERS</div>
+    <div class="amount">$19</div>
+    <div class="per">per month</div>
+    <p class="founding"><strong>$19/month founding-member pricing</strong> — locked in while your subscription stays active.</p>
+    <p class="standard">Standard price $29/month after the founding spots are gone.</p>
+    <ul>
+      <li>Job builder + before/after photos + checklist — free for your current job</li>
+      <li>Your first branded PDF report — free, no credit card required</li>
+      <li>Unlimited branded PDF job completion reports — no per-job fees</li>
+      <li>Pre-existing damage documentation — photographed before work begins</li>
+      <li>Evidence pack ZIP (report + original photos + SHA-256 checksums) for every saved job</li>
+      <li>Job history dashboard + backup export / restore</li>
+      <li>Built for phones — you're already carrying one on the job</li>
+      <li>Cancel anytime</li>
+    </ul>
+    <a class="btn btn-primary" href="https://buy.stripe.com/00wbJ24ZJ2eAcDiaO40oM0q">Subscribe — $19/month founding price</a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="honest">
+    <strong>Straight talk:</strong> SurfaceProof Ledger is a new tool from a small independent maker.
+    We don't post testimonials or customer counts we don't have. Your data lives in your own browser —
+    we never see your photos, your clients, or your reports. Try the job builder free —
+    if it doesn't make your work easier to prove, don't subscribe.
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>The fine print, in plain words</h2>
+  <div class="policies">
+    <div class="policy">
+      <h3>Privacy</h3>
+      <p>Your job details and photos are stored only in your own browser on your own
+         device — photos in the browser's local database, never uploaded to us or anyone else. There is
+         no account and no tracking of your clients or photos. Photos take up real space on the device,
+         so export a backup file from the app regularly; clearing your browser data erases what's saved here.</p>
+      <p style="margin-top:10px;">A word about photos: the photos you take belong to your cleaning business
+         and to the property owner — they're the owner's home, after all. Get the owner's permission before
+         photographing a property and before sharing reports that contain photos. Photograph the surfaces
+         and the work — keep people, vehicles' plates, and personal belongings out of frame where you can.
+         And because your browser is the only place photos live until you export them, download each job's
+         evidence pack promptly and keep it in your own storage (Drive, Dropbox, or similar) — we never
+         hold a copy, so what's lost from the device is lost for good.</p>
+    </div>
+    <div class="policy">
+      <h3>Billing &amp; cancellation</h3>
+      <p>Subscriptions are billed monthly through Stripe. You can cancel anytime from your Stripe
+         receipt or the Stripe customer portal — no email to us required, no cancellation fee.
+         When you cancel, Pro stays active until the end of the period you already paid for, and the
+         free job builder keeps working either way.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    SurfaceProof Ledger · Questions? Email <a href="mailto:chrisla122787@gmail.com">chrisla122787@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
